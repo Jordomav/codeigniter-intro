@@ -12,7 +12,8 @@
                 <li><a href="/">Home</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-
+                <li><a href="/newcard">Add</a></li>
+                <li><a href="/viewcards">View</a></li>
             </ul>
         </div>
     </div>
