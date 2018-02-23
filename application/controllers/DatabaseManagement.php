@@ -4,9 +4,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class DatabaseManagement extends CI_Controller
 {
 
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->dbforge();
+
+    }
+
     public function migrate_cards()
     {
-        $this->load->dbforge();
         $fields = array(
             'card_title' => array(
                 'type' => 'VARCHAR',
@@ -21,7 +27,6 @@ class DatabaseManagement extends CI_Controller
 
     public function migrate_notes()
     {
-        $this->load->dbforge();
         $fields = array(
             'note_text' => array(
                 'type' => 'VARCHAR',

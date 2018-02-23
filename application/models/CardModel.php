@@ -10,16 +10,16 @@ class CardModel extends CI_Model {
 
     function __construct() {
         parent::__construct();
+        $this->load->database();
     }
 
     function form_insert($data){
-        $this->load->database();
+
         $this->db->insert('cards', $data);
     }
 
     function form_update($data, $card)
     {
-        $this->load->database();
         $this->db->where('id', $card);
         $this->db->update('cards', $data);
     }

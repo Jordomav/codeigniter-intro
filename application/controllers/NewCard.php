@@ -4,18 +4,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class NewCard extends CI_Controller
 {
 
-//    function __construct() {
-//        parent::__construct();
-//        $this->load->model('CardModel');
-//    }
-
-    public function index()
-    {
-
+    function __construct() {
+        parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('form_validation');
+        $this->load->model('CardModel');
+    }
 
+    public function index()
+    {
         $data = [
             'header' => 'templates/_header',
             'navbar' => 'templates/_navbar',
@@ -29,12 +27,10 @@ class NewCard extends CI_Controller
 
     public function create()
     {
-        $this->load->helper('url');
-
         $form = array(
             'card_title' => $this->input->post('card_title')
         );
-        $this->load->model('CardModel');
+
         $this->CardModel->form_insert($form);
         redirect('/viewcards/');
     }

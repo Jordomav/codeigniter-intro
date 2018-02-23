@@ -4,13 +4,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ViewCard extends CI_Controller
 {
 
-    public function index()
+    function __construct()
     {
+        parent::__construct();
         $this->load->helper('url');
         $this->load->helper('form');
         $this->load->library('form_validation');
-
         $this->load->database();
+
+        $this->load->model('NoteModel');
+    }
+
+    public function index()
+    {
         $card_id = $this->uri->segment(2);
         $card = $this->db->get_where('cards', array('id' => $card_id));
 
@@ -32,16 +38,12 @@ class ViewCard extends CI_Controller
 
     public function add_note()
     {
-        $this->load->helper('url');
-        $this->load->database();
         $card_id = $this->uri->segment(3);
-
 
         $form = array(
             'note_text' => $this->input->post('note_text'),
             'card_id' => $card_id
         );
-        $this->load->model('NoteModel');
         $this->NoteModel->form_insert($form);
         redirect('/viewcard/' . $card_id);
     }
