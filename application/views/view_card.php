@@ -6,7 +6,16 @@ $this->load->view($navbar);
 ?>
     <!--Content goes here-->
     <div class="container" style="padding-top: 70px;">
-        <?php echo $card->card_title ?>
+        <h1><?php echo $card->card_title ?></h1>
+        <h3>Notes:</h3>
+        <?php foreach ($notes as $note): ?>
+            <p><?php echo $note->note_text ?></p>
+        <?php endforeach; ?>
+        <?php echo validation_errors(); ?>
+        <?php echo form_open('viewcard/add_note/' . $card->id); ?>
+        <?php echo form_input(array('id' => 'note_text', 'name' => 'note_text')); ?><br />
+        <?php echo form_submit(array('id' => 'submit', 'value' => 'Submit')); ?>
+        <?php echo form_close() ?>
     </div>
 <?php
 $this->load->view($footer);
