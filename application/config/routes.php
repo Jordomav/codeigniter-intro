@@ -58,5 +58,7 @@ $route['newcard/(:any)'] = 'newcard/$1';
 $route['viewcard/:num'] = 'viewcard';
 $route['viewcard/add_note/:num'] = 'viewcard/add_note';
 $route['editcard/:num'] = 'editcard';
+$route['editcard/edit_note/:num'] = 'editcard/edit_note';
+$route['editcard/update_note/:num'] = 'editcard/update_note';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

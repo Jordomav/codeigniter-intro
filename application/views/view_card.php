@@ -10,7 +10,7 @@ $this->load->view($navbar);
         <h3>Notes:</h3>
         <?php foreach ($notes as $note): ?>
             <div class="note_body">
-                <p><?php echo $note->note_text ?></p><a href="editcard/edit_note/ <?php echo $note->id ?>">(Edit)</a>
+                <p><?php echo $note->note_text ?></p><?php echo "<a href='/editcard/edit_note/$note->id'>(Edit)</a>"?>
             </div>
         <?php endforeach; ?>
         <?php echo validation_errors(); ?>

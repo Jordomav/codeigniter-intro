@@ -14,4 +14,11 @@ class NoteModel extends CI_Model
         $this->db->insert('notes', $data);
     }
 
+    function form_update($data, $note)
+    {
+        $this->load->database();
+        $this->db->where('id', $note);
+        $this->db->update('notes', $data);
+    }
+
 }
