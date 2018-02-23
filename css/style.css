@@ -5,3 +5,12 @@
     border: 1px grey solid;
     border-radius: 5px;
 }
+
+.note_body {
+    background-color: #707070;
+    color: white;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+    border: 1px black solid;
+    border-radius: 2px;
+}

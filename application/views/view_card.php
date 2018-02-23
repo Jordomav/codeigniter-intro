@@ -9,7 +9,9 @@ $this->load->view($navbar);
         <h1><?php echo $card->card_title ?></h1>
         <h3>Notes:</h3>
         <?php foreach ($notes as $note): ?>
-            <p><?php echo $note->note_text ?></p>
+            <div class="note_body">
+                <p><?php echo $note->note_text ?></p>
+            </div>
         <?php endforeach; ?>
         <?php echo validation_errors(); ?>
         <?php echo form_open('viewcard/add_note/' . $card->id); ?>
