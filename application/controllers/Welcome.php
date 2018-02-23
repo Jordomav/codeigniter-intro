@@ -19,6 +19,8 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
     public function index() {
+
+        $this->load->helper('url');
         $data = [
             'header' => 'templates/_header',
             'navbar' => 'templates/_navbar',

@@ -6,6 +6,8 @@ class ViewCard extends CI_Controller
 
     public function index()
     {
+
+        $this->load->helper('url');
         $this->load->database();
         $card_id = $this->uri->segment(2);
         $card = $this->db->get_where('cards', array('id' => $card_id));

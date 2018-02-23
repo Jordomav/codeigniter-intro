@@ -1,0 +1,7 @@
+.card-body {
+    background-color: #d6d6d6;
+    padding: 30px;
+    margin: 20px 0 20px 0;
+    border: 1px grey solid;
+    border-radius: 5px;
+}
