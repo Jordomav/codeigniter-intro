@@ -6,11 +6,11 @@ $this->load->view($navbar);
 ?>
     <!--Content goes here-->
     <div class="container" style="padding-top: 70px;">
-        <h1><?php echo $card->card_title ?></h1>
+        <h1><?php echo $card->card_title ?></h1><?php echo "<a href='/editcard/$card->id'>(Edit)</a>" ?>
         <h3>Notes:</h3>
         <?php foreach ($notes as $note): ?>
             <div class="note_body">
-                <p><?php echo $note->note_text ?></p>
+                <p><?php echo $note->note_text ?></p><a href="editcard/edit_note/ <?php echo $note->id ?>">(Edit)</a>
             </div>
         <?php endforeach; ?>
         <?php echo validation_errors(); ?>

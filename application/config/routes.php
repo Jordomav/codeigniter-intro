@@ -57,5 +57,6 @@ $route['databasemanagement/cards'] = 'databasemanagement/migrate_cards';
 $route['newcard/(:any)'] = 'newcard/$1';
 $route['viewcard/:num'] = 'viewcard';
 $route['viewcard/add_note/:num'] = 'viewcard/add_note';
+$route['editcard/:num'] = 'editcard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

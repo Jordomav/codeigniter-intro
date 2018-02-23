@@ -17,4 +17,10 @@ class CardModel extends CI_Model {
         $this->db->insert('cards', $data);
     }
 
+    function form_update($data, $card)
+    {
+        $this->load->database();
+        $this->db->where('id', $card);
+        $this->db->update('cards', $data);
+    }
 }
