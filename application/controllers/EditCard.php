@@ -91,4 +91,20 @@ class EditCard extends CI_Controller
         $this->NoteModel->form_update($form, $note_id);
         redirect($_SERVER['HTTP_REFERER']);
     }
+
+    public function remove_card()
+    {
+        $card_id = $this->uri->segment(3);
+
+        $this->CardModel->form_remove($card_id);
+        redirect('/viewcards');
+    }
+
+    public function remove_note()
+    {
+        $note_id = $this->uri->segment(3);
+
+        $this->NoteModel->form_remove($note_id);
+        redirect($_SERVER['HTTP_REFERER']);
+    }
 }

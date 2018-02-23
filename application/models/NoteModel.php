@@ -32,4 +32,10 @@ class NoteModel extends CI_Model
         $this->db->update('notes', $data);
     }
 
+    function form_remove($note)
+    {
+        $this->db->where('id', $note);
+        $this->db->delete('notes');
+    }
+
 }

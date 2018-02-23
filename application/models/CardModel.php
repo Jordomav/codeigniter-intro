@@ -35,4 +35,10 @@ class CardModel extends CI_Model {
         $this->db->where('id', $card);
         $this->db->update('cards', $data);
     }
+
+    function form_remove($card)
+    {
+        $this->db->where('id', $card);
+        $this->db->delete('cards');
+    }
 }
