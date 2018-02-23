@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class ViewCards extends CI_Controller
 {
 
+    /**
+     * ViewCards constructor.
+     */
     function __construct()
     {
         parent::__construct();
@@ -11,6 +14,11 @@ class ViewCards extends CI_Controller
         $this->load->helper('url');
     }
 
+    /**
+     * View all cards in the DB
+     *
+     * @load view_cards with $data.
+     */
     public function index()
     {
         $data = [

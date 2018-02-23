@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class DatabaseManagement extends CI_Controller
 {
 
+    /**
+     * DatabaseManagement constructor.
+     */
     function __construct()
     {
         parent::__construct();
@@ -11,6 +14,9 @@ class DatabaseManagement extends CI_Controller
 
     }
 
+    /**
+     * Migrate and create cards table.
+     */
     public function migrate_cards()
     {
         $fields = array(
@@ -25,6 +31,9 @@ class DatabaseManagement extends CI_Controller
         $this->dbforge->create_table('cards');
     }
 
+    /**
+     * Migrate and create notes table.
+     */
     public function migrate_notes()
     {
         $fields = array(

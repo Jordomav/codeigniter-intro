@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class NewCard extends CI_Controller
 {
 
+    /**
+     * NewCard constructor.
+     */
     function __construct() {
         parent::__construct();
         $this->load->helper('url');
@@ -12,6 +15,11 @@ class NewCard extends CI_Controller
         $this->load->model('CardModel');
     }
 
+    /**
+     * View for creating new cards.
+     *
+     * @load new_card with $data.
+     */
     public function index()
     {
         $data = [
@@ -25,6 +33,11 @@ class NewCard extends CI_Controller
         }
     }
 
+    /**
+     * Take input and pass it to the CardModel
+     *
+     * @load Go back to the view_cards page.
+     */
     public function create()
     {
         $form = array(

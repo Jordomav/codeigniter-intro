@@ -49,16 +49,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
+// CodeIgniter reserved routes.
 $route['default_controller'] = 'welcome';
-$route['newcard/index'] = 'newcard';
-$route['newcard/create'] = 'newcard/create';
+$route['404_override'] = '';
+$route['translate_uri_dashes'] = FALSE;
+
+// DB handlers.
 $route['databasemanagement/notes'] = 'databasemanagement/migrate_notes';
 $route['databasemanagement/cards'] = 'databasemanagement/migrate_cards';
-$route['newcard/(:any)'] = 'newcard/$1';
+
+// Create and handle cards and notes.
 $route['viewcard/:num'] = 'viewcard';
 $route['viewcard/add_note/:num'] = 'viewcard/add_note';
+$route['newcard/index'] = 'newcard';
+$route['newcard/create'] = 'newcard/create';
+$route['newcard/(:any)'] = 'newcard/$1';
+
+// Update cards and notes.
 $route['editcard/:num'] = 'editcard';
 $route['editcard/edit_note/:num'] = 'editcard/edit_note';
 $route['editcard/update_note/:num'] = 'editcard/update_note';
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+

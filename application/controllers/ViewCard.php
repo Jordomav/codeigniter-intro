@@ -3,7 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class ViewCard extends CI_Controller
 {
-
+    /**
+     * ViewCard constructor.
+     */
     function __construct()
     {
         parent::__construct();
@@ -15,6 +17,11 @@ class ViewCard extends CI_Controller
         $this->load->model('NoteModel');
     }
 
+    /**
+     * View individual card with all corresponding notes.
+     *
+     * @load view_card with $data.
+     */
     public function index()
     {
         $card_id = $this->uri->segment(2);
@@ -36,6 +43,11 @@ class ViewCard extends CI_Controller
         }
     }
 
+    /**
+     * Take input for new note and pass it to the NoteModel.
+     *
+     * @load reload current page.
+     */
     public function add_note()
     {
         $card_id = $this->uri->segment(3);

@@ -4,6 +4,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class EditCard extends CI_Controller
 {
 
+    /**
+     * EditCard constructor.
+     */
     function __construct()
     {
         parent::__construct();
@@ -15,6 +18,11 @@ class EditCard extends CI_Controller
         $this->load->model('CardModel');
     }
 
+    /**
+     * Get the requested card and pass it to the view.
+     *
+     * @load edit_card with $data.
+     */
     public function index()
     {
         $card_id = $this->uri->segment(2);
@@ -30,6 +38,11 @@ class EditCard extends CI_Controller
         $this->load->view('edit_card', $data);
     }
 
+    /**
+     * Take input and pass it to the CardModel.
+     *
+     * @load Go back to the updated card page.
+     */
     public function edit_card()
     {
         $card_id = $this->uri->segment(3);
@@ -42,6 +55,11 @@ class EditCard extends CI_Controller
         redirect('/viewcard/' . $card_id);
     }
 
+    /**
+     * Get the requested note and pass it to the view.
+     *
+     * @load edit_page with $data.
+     */
     public function edit_note()
     {
         $note_id = $this->uri->segment(3);
@@ -57,6 +75,11 @@ class EditCard extends CI_Controller
         $this->load->view('edit_note', $data);
     }
 
+    /**
+     * Take the input and pass it to the NoteModel.
+     *
+     * @load reload current page.
+     */
     public function update_note()
     {
         $note_id = $this->uri->segment(3);
