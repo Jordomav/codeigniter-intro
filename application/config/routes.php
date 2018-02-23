@@ -53,5 +53,6 @@ $route['default_controller'] = 'welcome';
 $route['newcard/index'] = 'newcard';
 $route['newcard/create'] = 'newcard/create';
 $route['newcard/(:any)'] = 'newcard/$1';
+$route['viewcard/:num'] = 'viewcard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

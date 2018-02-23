@@ -11,7 +11,7 @@ $this->load->view($navbar);
         foreach ($cards->result() as $card) {
             echo "
             <div class='row'>
-                <h1><a href='#'>$card->card_title</a></h1>
+                <h1><a href='/viewcard/$card->id'>$card->card_title</a></h1>
             </div>
             ";
         }
